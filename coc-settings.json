@@ -1,0 +1,35 @@
+{
+  "suggest.noselect": false,
+  "suggest.enablePreselect": true,
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "coc.preferences.formatOnType": true,
+  "diagnostic.enable": true,
+  "diagnostic.displayByAle": false,
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.messageDelay": 200,
+  "diagnostic.refreshOnInsertMode": false,
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+      "initializationOptions": {
+        "cache": {
+          "directory": ".ccls-cache"
+        }
+      }
+    },
+    "csharp-ls": {
+      "command": "csharp-ls",
+      "filetypes": ["cs"],
+      "rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"]
+    },
+    "rust": {
+      "command": "rust-analyzer",
+      "filetypes": ["rust"],
+      "rootPatterns": ["Cargo.toml"]
+    }
+  },
+  "snippets.ultisnips.pythonPrompt": false,
+  "svelte.enable-ts-plugin": false
+}
