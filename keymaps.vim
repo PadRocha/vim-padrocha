@@ -26,7 +26,7 @@ nnoremap <A-Down> :m .+1<CR>
 vnoremap <A-Down> :m '>+1<CR>gv=gv
 " Duplicar el panel actual verticalmente
 nnoremap <A-d> :vsplit<CR>
-" Duplicar el panel actual horizontalmente
+"git push origin master Duplicar el panel actual horizontalmente
 nnoremap <A-s> :split<CR>
 " Atajo para mover el foco al panel superior
 nnoremap <A-k> <C-W>k

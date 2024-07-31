@@ -1,6 +1,8 @@
 " Neovim init.vim congiguration file
 
 " General settings
+set encoding=UTF-8            " utf-8 byte sequence
+" set guifont=FiraCode \ Nerd\ Font\ 11
 set showmatch                 " show matching
 set ignorecase                " case insensitive
 set mouse=v                   " middle-click paste with
@@ -28,6 +30,7 @@ set completeopt=preview,menu  " configura Neovim para mostrar un menú emergente
 set autoread                  " Neovim monitorea automáticamente los archivos abiertos en busca de cambios externos.
 " set spell                   " enable spell check (may need to download language package)
 " set noswapfile              " disable creating swap file
+set showcmd                   " Show keystroke
 
 " Set Python 3
 let g:python3_host_prog = 'C:\Users\proch\AppData\Local\Programs\Python\Python312\python.exe'

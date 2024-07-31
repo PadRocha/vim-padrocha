@@ -50,6 +50,8 @@ Plug 'anuvyklack/pretty-fold.nvim'
 " Theme
 Plug 'Mofiqul/dracula.nvim', { 'as': 'dracula' }
 Plug 'tribela/vim-transparent'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Snippets
 Plug 'SirVer/ultisnips'
