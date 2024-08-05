@@ -18,11 +18,11 @@ set wildmode=longest,list     " get bash-like tab completions
 set list
 set listchars+=eol:$
 " set cc=80                   " set an 80 column border for good coding style
-filetype plugin indent on     " allow auto-indenting depending on file type
 syntax on                     " syntax highlighting
 set mouse=a                   " enable mouse click
 set clipboard=unnamedplus     " using system clipboard
 filetype plugin on
+filetype plugin indent on     " allow auto-indenting depending on file type
 set relativenumber
 set cursorline                " highlight current cursorline
 set ttyfast                   " Speed up scrolling in Vim
@@ -35,21 +35,7 @@ set showcmd                   " Show keystroke
 " Set Python 3
 let g:python3_host_prog = 'C:\Users\proch\AppData\Local\Programs\Python\Python312\python.exe'
 
-" Autocommands para formatear al guardar
-augroup format_on_save
-  autocmd!
-  autocmd BufWritePre *.js :CocCommand editor.action.formatDocument
-  autocmd BufWritePre *.ts :CocCommand editor.action.formatDocument
-  autocmd BufWritePre *.tsx :CocCommand editor.action.formatDocument
-  autocmd BufWritePre *.json :CocCommand editor.action.formatDocument
-  autocmd BufWritePre *.md :CocCommand editor.action.formatDocument
-  autocmd BufWritePre *.html :CocCommand editor.action.formatDocument
-  autocmd BufWritePre *.css :CocCommand editor.action.formatDocument
-  autocmd BufWritePre *.scss :CocCommand editor.action.formatDocument
-  autocmd BufWritePre *.lua :CocCommand editor.action.formatDocument
-augroup END
-
-" Additional language-specific configurations can be added here
+" " Additional language-specific configurations can be added here
 
 source C:\Users\proch\AppData\Local\nvim\plugins.vim
 source C:\Users\proch\AppData\Local\nvim\keymaps.vim

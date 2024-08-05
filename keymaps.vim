@@ -16,17 +16,9 @@ nnoremap <A-w> :close<CR>
 nnoremap <A-Right> :tabnext<CR>
 " Atajo para cambiar a la pestaña anterior
 nnoremap <A-Left> :tabprevious<CR>
-" Mover una línea hacia arriba
-inoremap <A-Up> <ESC> :m .-2<CR>==gi
-nnoremap <A-Up> :m .-2<CR>
-vnoremap <A-Up> :m '<-2<CR>gv=gv
-" Mover una línea hacia abajo
-inoremap <A-Down> <ESC> :m .+1<CR>==gi
-nnoremap <A-Down> :m .+1<CR>
-vnoremap <A-Down> :m '>+1<CR>gv=gv
 " Duplicar el panel actual verticalmente
 nnoremap <A-d> :vsplit<CR>
-"git push origin master Duplicar el panel actual horizontalmente
+" Duplicar el panel actual horizontalmente
 nnoremap <A-s> :split<CR>
 " Atajo para mover el foco al panel superior
 nnoremap <A-k> <C-W>k
@@ -52,10 +44,18 @@ nnoremap <C-h> :vertical resize -1<CR>
 nnoremap <C-A-k> :wincmd K<CR>
 " Atajo para mover el panel al extremo inferior
 nnoremap <C-A-j> :wincmd J<CR>
-" Atajo para mover el panel al extremo izquierdo
-nnoremap <C-A-h> :wincmd H<CR>
 " Atajo para mover el panel al extremo derecho
 nnoremap <C-A-l> :wincmd L<CR>
+" Atajo para mover el panel al extremo izquierdo
+nnoremap <C-A-h> :wincmd H<CR>
+" Mover una línea hacia arriba
+inoremap <A-Up> <ESC> :m .-2<CR>==gi
+nnoremap <A-Up> :m .-2<CR>
+vnoremap <A-Up> :m '<-2<CR>gv=gv
+" Mover una línea hacia abajo
+inoremap <A-Down> <ESC> :m .+1<CR>==gi
+nnoremap <A-Down> :m .+1<CR>
+vnoremap <A-Down> :m '>+1<CR>gv=gv
 " Atajo para undo
 nnoremap <C-z> :undo<CR>
 " Atajo para redo
@@ -70,22 +70,20 @@ nnoremap <C-A-b> :NERDTreeFind<CR>
 inoremap <A-f> <ESC> :Rg<CR>
 nnoremap <A-f> :Rg<CR>
 " Atajo para buscar solo en los buffer abiertos
-inoremap <A-F> <ESC> :Lines<CR>
-nnoremap <A-F> :Lines<CR>
-" Atajo para mostar todas las marcas
-inoremap <A-m> <ESC> :Marks<CR>
-nnoremap <A-m> :Marks<CR>
-" Atajo para mostrar todos los buffers
-inoremap <A-b> <ESC> :Buffers<CR>
-nnoremap <A-b> :Buffers<CR>
+inoremap <A-S-f> <ESC> :Lines<CR>
+nnoremap <A-S-f> :Lines<CR>
 
 " Comandos con remapeos
 " Atajo para agregar una marca de desplazamiento
 nnoremap <leader>m :mark<Space>
 " Atajo para activar FZF
 nnoremap <silent> <leader>f :Files<CR>
+" Atajo para mostrar todos los buffers
+nnoremap <silent> <leader>b :Buffers<CR>
 " Atajo para desactivar el resaltado de búsqueda
 nnoremap <silent> <leader>n :nohlsearch<CR>
+" Atajo para recargar la configuración de Neovim
+nnoremap <leader>sv :source $MYVIMRC<CRv
 
 " open file in a text by placing text and gf
 nnoremap gf :vert winc f<cr>

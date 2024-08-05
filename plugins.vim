@@ -13,8 +13,6 @@ Plug 'preservim/nerdtree'
 " Commenting utility
 Plug 'tpope/vim-commentary'
 
-" Surrounding utility
-Plug 'tpope/vim-surround'
 
 " Git integration
 Plug 'tpope/vim-fugitive'
@@ -45,7 +43,7 @@ Plug 'rakr/vim-one'
 Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-dadbod'
 Plug 'joeveiga/ng.nvim'
-Plug 'anuvyklack/pretty-fold.nvim'
+" Plug 'anuvyklack/pretty-fold.nvim'
 
 " Theme
 Plug 'Mofiqul/dracula.nvim', { 'as': 'dracula' }
@@ -81,7 +79,6 @@ let g:coc_global_extensions = [
 \ 'coc-docker',
 \ 'coc-vetur',
 \ 'coc-emmet',
-\ 'coc-prettier',
 \ 'coc-eslint',
 \ 'coc-stylelint',
 \ 'coc-svelte',
@@ -92,9 +89,45 @@ let g:coc_global_extensions = [
 " Plugin configurations
 " Assuming a plugin manager like vim-plug is used
 
+" Prettier Configuración with ALE
+" Configura ALE para los lenguajes y frameworks que mencionaste
+let g:ale_fixers = {
+  \ 'javascript': ['prettier'],
+  \ 'typescript': ['prettier'],
+  \ 'c': ['clang-format'],
+  \ 'cpp': ['clang-format'],
+  \ 'csharp': ['omnisharp'],
+  \ 'rust': ['rustfmt'],
+  \ 'python': ['autopep8'],
+  \ 'go': ['gofmt'],
+  \ 'php': ['phpcbf'],
+  \ 'angular': ['prettier'],
+  \ 'java': ['google_java_format'],
+  \ 'lua': ['lua-format'],
+  \ 'powershell': ['prettier'],
+  \ 'dotnet': ['dotnet-format'],
+  \ 'tsx': ['prettier'],
+  \ 'matlab': ['matlab_formatter'],
+  \ 'ruby': ['rufo'],
+  \ 'sql': ['sqlformat'],
+  \ 'json': ['prettier'],
+  \ }
+" Habilita ALE para formatear automáticamente al guardar
+let g:ale_fix_on_save = 1
+" Configura ALE para aplicar trim, eliminar líneas finales y ajustar la indentación
+let g:ale_fixers['*'] = ['remove_trailing_lines', 'trim_whitespace', 'prettier']
+let g:ale_fix_on_save = 1
+" Use ALE and also some plugin 'foobar' as completion sources for all code.
+let g:ale_completion_enabled = 1
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
+
 " Theme configuration
 let g:dracula_colorterm = 0
 colorscheme dracula
+" Cambiar el color de fondo y el color de fuente en modo visual
+highlight Visual ctermbg=gray guibg=gray
+highlight Visual ctermfg=white guifg=white
 
 " NERDTree settings
 " Set the width of the NERDTree window relative to the current window width
@@ -132,7 +165,7 @@ let g:globs = ' --glob=!.git/ --glob=!node_modules/ --glob=!vendor/ --glob=!undo
 command! -bang -nargs=? Rg
                   \ call fzf#vim#grep2('rg -i -n -L -.'.g:globs.'--no-ignore-vcs', <q-args>, {}, 0)
 command! -bang -nargs=? -complete=dir Files
-                  \ call fzf#vim#files(<q-args>, 
+                  \ call fzf#vim#files(<q-args>,
                   \ {'options': ['--preview', 'bat --style=full,changes --plain --theme=Dracula --color=always {}']}, <bang>0)
 
 " Configuración de air-line
@@ -171,3 +204,7 @@ let g:transparent_groups = ['Normal', 'Comment', 'Constant', 'Special', 'Identif
 let g:transparent_groups += ['Pmenu']
 " coc.nvim
 let g:transparent_groups += ['NormalFloat', 'CocFloating']
+
+" Markdown Configuration
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_fenced_languages = ['csharp=cs', 'c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini']
