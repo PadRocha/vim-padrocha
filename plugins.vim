@@ -116,7 +116,6 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 " Configura ALE para aplicar trim, eliminar líneas finales y ajustar la indentación
 let g:ale_fixers['*'] = ['remove_trailing_lines', 'trim_whitespace', 'prettier']
-let g:ale_fix_on_save = 1
 " Use ALE and also some plugin 'foobar' as completion sources for all code.
 let g:ale_completion_enabled = 1
 " Set this. Airline will handle the rest.

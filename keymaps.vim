@@ -77,7 +77,7 @@ nnoremap <A-S-f> :Lines<CR>
 " Atajo para agregar una marca de desplazamiento
 nnoremap <leader>m :mark<Space>
 " Atajo para activar FZF
-nnoremap <silent> <leader>f :Files<CR>
+nnoremap <silent> <leader>s :Files<CR>
 " Atajo para mostrar todos los buffers
 nnoremap <silent> <leader>b :Buffers<CR>
 " Atajo para desactivar el resaltado de búsqueda
